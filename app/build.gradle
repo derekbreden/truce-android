@@ -51,34 +51,14 @@ def twaManifest = [
 ]
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('/Users/derekbredensteiner/Desktop/android.keystore')
-            storePassword '116242'
-            keyAlias 'android'
-            keyPassword '116242'
-        }
-        release {
-            storeFile file('/Users/derekbredensteiner/Desktop/android.keystore')
-            storePassword '116242'
-            keyAlias 'android'
-            keyPassword '116242'
-        }
-        run {
-            storeFile file('/Users/derekbredensteiner/Desktop/android.keystore')
-            storePassword '116242'
-            keyAlias 'android'
-            keyPassword '116242'
-        }
-    }
-    compileSdkVersion 35
+    compileSdkVersion 36
     namespace "net.truce.twa"
     defaultConfig {
         applicationId "net.truce.twa"
         minSdkVersion 19
-        targetSdkVersion 35
-        versionCode 4
-        versionName "2"
+        targetSdkVersion 36
+        versionCode 7
+        versionName "5"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -165,12 +145,10 @@ android {
 
         resValue "bool", "enableSiteSettingsShortcut", twaManifest.enableSiteSettingsShortcut
         resValue "string", "orientation", twaManifest.orientation
-        signingConfig signingConfigs.release
     }
     buildTypes {
         release {
             minifyEnabled true
-            signingConfig signingConfigs.release
         }
     }
     compileOptions {
